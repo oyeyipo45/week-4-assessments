@@ -4,11 +4,13 @@ import java.util.Scanner;
 
 
 public class UserInput {
+    // Get user input of type string
      double getUserInput(Scanner scanner, String message) {
         System.out.print(message);
         return scanner.nextDouble();
     }
 
+    // Get user input of type int
      int getUserInputInt(Scanner scanner) {
         int choice;
         do {

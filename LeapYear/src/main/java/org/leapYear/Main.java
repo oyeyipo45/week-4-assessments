@@ -8,8 +8,10 @@ public class Main {
         Calculator calculator = new Calculator();
         UserInput userInput = new UserInput();
 
+        // Get user input
        int year = userInput.getUserInputYear(scanner);
 
+       // Calculate leap year
         calculator.isLeapYear(year);
 
         scanner.close();
