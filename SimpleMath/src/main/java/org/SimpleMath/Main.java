@@ -11,6 +11,7 @@ public class Main {
 
         int choice;
 
+        // When user selects between options 1 - 4 run the loop
         do {
             System.out.println("\nOptions: Please select program of choice");
             System.out.println("1. Sum of 2 whole numbers (strings are not allowed)");
@@ -22,6 +23,7 @@ public class Main {
             choice = scanner.nextInt();
 
             try {
+                // Use as switch to handle different cases
                 switch (choice) {
                     case 1 -> Calculate.sumTwoNumbers(scanner);
                     case 2 -> Calculate.roundUserInput(scanner);

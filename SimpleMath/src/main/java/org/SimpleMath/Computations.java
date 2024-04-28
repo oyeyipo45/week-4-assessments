@@ -34,16 +34,19 @@ public class Computations {
         double[] values = new double[5];
         double sum = 0;
 
+        // Collect needed values
         for (int i = 0; i < values.length; i++) {
             System.out.print("Please enter value " + (i + 1) + ": ");
             values[i] = scanner.nextDouble();
             sum += values[i];
         }
 
+        // Average
         double average = sum / values.length;
         double min = values[0];
         double max = values[0];
 
+        // Compute min and max values
         for (double value : values) {
             if (value < min) {
                 min = value;
@@ -53,9 +56,11 @@ public class Computations {
             }
         }
 
+        // Square root of max value
         double maxValueSquareRoot = Math.sqrt(max);
 
 
+        // Output solution
         solutionHeader(3);
         System.out.println("\nThe sum: " + sum);
         System.out.println("The average: " + average);
