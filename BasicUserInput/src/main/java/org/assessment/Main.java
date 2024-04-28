@@ -8,20 +8,24 @@ public class Main {
     public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
             DateFormatter formattedDate = new DateFormatter();
+            Utils utils = new Utils();
 
-            System.out.print("Please enter your name: ");
-            String name = scanner.nextLine();
+            // Get name of user
+            String name = utils.getUserInput(scanner, "Please enter your name: ");
 
-            System.out.print("Please enter your date of birth in this exact format :  (YYYY-MM-DD): ");
-            String dateOrBirth = scanner.nextLine();
-            LocalDate birthDate = LocalDate.parse(dateOrBirth);
+            // Get user birthday
+            LocalDate birthDate = utils.getBirthDate(scanner);
 
+            // Date today
             LocalDate today = LocalDate.now();
-            Period age = Period.between(birthDate, today);
-            int yearsOld = age.getYears();
 
+            // Calculate entered age
+            int yearsOld = utils.calculateAge(birthDate, today);
+
+            // Format the date
             String dateFormatted = formattedDate.formatDateInput(today.toString());
 
+            // Output result
             System.out.printf("Welcome %s, you are %d years old and today's date is %s\n",
                      name, yearsOld, dateFormatted);
 
