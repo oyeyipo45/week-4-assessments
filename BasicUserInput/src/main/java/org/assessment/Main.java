@@ -1,6 +1,5 @@
 package org.assessment;
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.Scanner;
 
 
@@ -11,10 +10,10 @@ public class Main {
             Utils utils = new Utils();
 
             // Get name of user
-            String name = utils.getUserInput(scanner, "Please enter your name: ");
+            String name = utils.getUserInput(scanner, "\nPlease enter your name: ");
 
             // Get user birthday
-            LocalDate birthDate = utils.getBirthDate(scanner);
+            LocalDate birthDate = utils.getBirthDate(scanner, "\nPlease enter your date of birth in YYYY-MM-DD format: ");
 
             // Date today
             LocalDate today = LocalDate.now();
@@ -26,7 +25,7 @@ public class Main {
             String dateFormatted = formattedDate.formatDateInput(today.toString());
 
             // Output result
-            System.out.printf("Welcome %s, you are %d years old and today's date is %s\n",
+            System.out.printf("\nWelcome %s, you are %d years old and today's date is %s\n",
                      name, yearsOld, dateFormatted);
 
             scanner.close();
