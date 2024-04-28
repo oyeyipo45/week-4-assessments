@@ -9,12 +9,12 @@ public class UserInput {
         return scanner.nextDouble();
     }
 
-     int getUserInputInt(Scanner scanner, String message, int min, int max) {
+     int getUserInputInt(Scanner scanner) {
         int choice;
         do {
-            System.out.print(message);
+            System.out.print("Please enter your choice (1-3 for Years, Months, Days): ");
             choice = scanner.nextInt();
-        } while (choice < min || choice > max);
+        } while (choice < 1 || choice > 3);
         return choice;
     }
 }

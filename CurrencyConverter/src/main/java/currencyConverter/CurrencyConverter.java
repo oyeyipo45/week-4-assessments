@@ -10,7 +10,6 @@ public class CurrencyConverter {
     private static final Scanner scanner = new Scanner(System.in);
     private static final Map<String, Double> exchangeRates = new HashMap<>();
 
-
     static void populateExchangeRates() {
         exchangeRates.put("NGN", 1.0); // Base currency (Nigerian Naira)
         exchangeRates.put("USD", 0.00077);
