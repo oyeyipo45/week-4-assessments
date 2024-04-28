@@ -59,7 +59,6 @@ public class Computations {
         // Square root of max value
         double maxValueSquareRoot = Math.sqrt(max);
 
-
         // Output solution
         solutionHeader(3);
         System.out.println("\nThe sum: " + sum);

@@ -10,6 +10,7 @@ public class CurrencyConverter {
     private static final Scanner scanner = new Scanner(System.in);
     private static final Map<String, Double> exchangeRates = new HashMap<>();
 
+    // Add available currency to array
     static void populateExchangeRates() {
         exchangeRates.put("NGN", 1.0); // Base currency (Nigerian Naira)
         exchangeRates.put("USD", 0.00077);
@@ -18,6 +19,7 @@ public class CurrencyConverter {
         exchangeRates.put("CNY", 0.0054);
     }
 
+    // Give user options to select from
     static void displayMenu() {
         int choice;
         do {
@@ -30,6 +32,7 @@ public class CurrencyConverter {
             choice = scanner.nextInt();
 
             try {
+                // Use user choice to perform operation
                 switch (choice) {
                     case 1 -> convertCurrency();
                     case 2 -> displaySupportedCurrencies();
@@ -53,11 +56,13 @@ public class CurrencyConverter {
         System.out.print("Please enter the currency you want to convert to in the exact ISO3 code format (e.g. NGN, USD, EUR, GBP, CNY): ");
         String toCurrency = scanner.next().toUpperCase();
 
+        // Validate user input
         if (!exchangeRates.containsKey(fromCurrency) || !exchangeRates.containsKey(toCurrency)) {
             System.out.println("\nUnsupported currency. Please select from available options.");
             return;
         }
 
+        // Get exchange rates and convert
         double fromRate = exchangeRates.get(fromCurrency);
         double toRate = exchangeRates.get(toCurrency);
         double convertedAmount = (amount * toRate) / fromRate;
